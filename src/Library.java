@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class Library {
     private Book[] bookArray;
 
@@ -5,7 +7,7 @@ public class Library {
         this.bookArray = new Book[size];
     }
 
-    void addBookToLibrary(Book book) {
+    public void addBookToLibrary(Book book) {
         for (int i = 0; i < this.bookArray.length; i++) {
             if (this.bookArray[i] == null) {
                 this.bookArray[i] = book;
@@ -16,7 +18,7 @@ public class Library {
         System.out.println();
     }
 
-    void printBooks() {
+    public void printBooks() {
         for (Book current : this.bookArray) {
             if (current != null) {
                 System.out.printf("%s %s: %s: %d", current.getAuthor().getName(), current.getAuthor().getLastname(),
@@ -25,9 +27,9 @@ public class Library {
             }
         }
     }
-    void printInfo(String title) {
+    public void printInfo(String title) {
         for (Book current: this.bookArray) {
-            if (current != null && current.getTitle() == title) {
+            if (current != null && Objects.equals(current.getTitle(), title)) {
                 System.out.printf("%s by %s %s was published in %d", current.getTitle(), current.getAuthor().getName(),
                         current.getAuthor().getLastname(), current.getYear());
                 System.out.println();
@@ -38,9 +40,9 @@ public class Library {
         System.out.println();
     }
 
-    void changeYear(String title, int yearNew) {
+    public void changeYear(String title, int yearNew) {
         for (Book current: this.bookArray) {
-            if (current != null && current.getTitle() == title) {
+            if (current != null && Objects.equals(current.getTitle(), title)) {
                 current.setYear(yearNew);
                 return;
             }
