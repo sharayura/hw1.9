@@ -8,16 +8,16 @@ public class Book {
         this.author = author;
         this.year = year;
     }
-    public String getTitle() {
+    String getTitle() {
         return title;
     }
-    public Author getAuthor() {
+    Author getAuthor() {
         return author;
     }
-    public int getYear() {
+    int getYear() {
         return year;
     }
-    public void setYear(int year) {
+    void setYear(int year) {
         this.year = year;
     }
 }
