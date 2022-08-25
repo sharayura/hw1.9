@@ -1,5 +1,3 @@
-import java.util.Objects;
-
 public class Library {
     private Book[] bookArray;
 
@@ -29,7 +27,7 @@ public class Library {
     }
     public void printInfo(String title) {
         for (Book current: this.bookArray) {
-            if (current != null && Objects.equals(current.getTitle(), title)) {
+            if (current != null && current.getTitle().equals(title)) {
                 System.out.printf("%s by %s %s was published in %d", current.getTitle(), current.getAuthor().getName(),
                         current.getAuthor().getLastname(), current.getYear());
                 System.out.println();
@@ -42,7 +40,7 @@ public class Library {
 
     public void changeYear(String title, int yearNew) {
         for (Book current: this.bookArray) {
-            if (current != null && Objects.equals(current.getTitle(), title)) {
+            if (current != null && current.getTitle().equals(title)) {
                 current.setYear(yearNew);
                 return;
             }
