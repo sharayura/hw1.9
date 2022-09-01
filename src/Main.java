@@ -13,22 +13,24 @@ public class Main {
         // Сложный уровень
         Author king = new Author("Stiven", "King");
         Book theStand = new Book(king, "The Stand", 1978);
+        Book theStand1 = new Book(king, "The Stand", 1978);
 
         Library myLib = new Library(5);
         myLib.addBookToLibrary(new Book(new Author("Сергей", "Есенин"), "Сборник", 1985));
         myLib.addBookToLibrary(chelovek);
         myLib.addBookToLibrary(warPeace);
         myLib.addBookToLibrary(theStand);
-        myLib.printBooks();
-        System.out.println();
+        myLib.addBookToLibrary(theStand);
 
-        myLib.printInfo("Война и мир");
-        myLib.printInfo("Война");
         System.out.println();
+        System.out.println(theStand.equals(chelovek));
+        System.out.println(theStand.equals(theStand1));
+        System.out.println(chelovek.hashCode());
+        System.out.println(theStand1.hashCode());
+        System.out.println(theStand.hashCode());
 
-        myLib.changeYear("Сборник", 2000);
-        myLib.changeYear("Сбор", 2010);
-        myLib.printBooks();
+        System.out.println(myLib);
+
 
     }
 

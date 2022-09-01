@@ -15,15 +15,15 @@ public class Library {
         System.out.printf("Массив заполнен. Книга %s не добавлена.", book.getTitle());
         System.out.println();
     }
-
-    public void printBooks() {
+    @Override
+    public String toString() {
+        StringBuilder libStr = new StringBuilder();
         for (Book current : this.bookArray) {
             if (current != null) {
-                System.out.printf("%s %s: %s: %d", current.getAuthor().getName(), current.getAuthor().getLastname(),
-                        current.getTitle(), current.getYear());
-                System.out.println();
+                libStr.append(current.toString() + '\n');
             }
         }
+        return libStr.toString();
     }
     public void printInfo(String title) {
         for (Book current: this.bookArray) {
